@@ -1,0 +1,19 @@
+Marks in Maths >=65
+Marks in Phy >=55
+Marks in Chem>=50
+Total in all three subject >=190
+or
+Total in Math and Physics >=140
+
+#code 
+math=int(input("Enter the math mark:"))
+chem=int(input("Enter the chem mark:"))
+phy=int(input("Enter the phy mark:"))
+if(math>=65):
+  if(phy>=55):
+    if(chem>=50):
+      print("Eligible")
+elif((math+phy+chem)>=190 or (math+phy)>=140):
+  print("Eligible")
+else:
+  print("Not eligible")
