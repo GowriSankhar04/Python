@@ -1,0 +1,6 @@
+# Given a list of DNA sequences, filter sequences with length greater than a threshold
+sequences = ["ATCG", "ATCGATCG", "AT", "ATCGATCGATCG"]
+threshold = 5
+# Fill the rest of the code using List comprehensions
+seq=[i for i in sequences if(len(i)<=threshold)]
+print(seq)
