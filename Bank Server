@@ -1,0 +1,42 @@
+#Bank server
+class bank:
+  def __init__(self,acc,pin):
+    self.acc=acc
+    self.pin=pin
+  def aut(self):
+    dic={505055:{'name':'akash','pin':1598,'amt':12000},
+         123891:{'name':'gowrisankhar','pin':9104,'amt':5000},
+         135784:{'name':'rajesh','pin':4567},'amt':18000}
+    if self.acc in dic:
+      if self.pin == dic[self.acc]['pin'] :
+        print("select your option:")
+        print("1->withdraw\n2->deposit\n3->enquiry")
+        x=int(input("type here :"))
+        def withdraw():
+          p=int(input("withdraw amt"))
+          print("acc balance:",dic[self.acc]['amt'])
+          if p>dic[self.acc]['amt']:
+            print("insufficent balance")
+          else:
+            dic[self.acc]['amt']=dic[self.acc]['amt']-p
+            print("pls collect your cash")
+        def deposit():
+          k=int(input("Deposit amount :"))
+          dic[self.acc]['amt']=dic[self.acc]['amt']+k
+          print("acc balance:",dic[self.acc]['amt'])
+        def enq():
+          print("acc balance:",dic[self.acc]['amt'])
+        if x==1:
+          withdraw()
+        elif x==2:
+          deposit()
+        elif x==3:
+          enq()
+        else:
+          print("Invalid option")
+      else:
+        print("incorrect pin")
+    else:
+      print("acc not found")
+a1=bank(505055,1598)
+a1.aut()
