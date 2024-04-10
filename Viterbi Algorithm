@@ -1,0 +1,27 @@
+import math
+s='GGATGC'
+a=[]
+H={'A':math.log(0.2,2),'T':math.log(0.2,2),'G':math.log(0.3,2),'C':math.log(0.3,2)}
+L={'A':math.log(0.3,2),'T':math.log(0.3,2),'G':math.log(0.2,2),'C':math.log(0.2,2)}
+ll=math.log(0.6,2)
+hh=math.log(0.5,2)
+h_l=math.log(0.5,2)
+l_h=math.log(0.4,2)
+h=l=math.log(0.5,2)
+print(H)
+print(L)
+for i in range(len(s)):
+  if i==0:
+    Ph=H[s[0]]+h
+    Pl=L[s[0]]+l
+  else:
+    Ph1=H[s[i]]+max(Ph+hh,Pl+l_h)
+    Pl1=L[s[i]]+max(Ph+h_l,Pl+ll)
+    Ph=Ph1
+    Pl=Pl1
+  print(round(Ph,2),round(Pl,2))
+  if Ph>Pl:
+    a.append('H')
+  else:
+    a.append('L') 
+print(a)
