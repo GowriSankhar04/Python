@@ -1,0 +1,14 @@
+pdb=open("/content/1crn.pdb","r")
+atom=[]
+for i in pdb:
+  if i[0:4]=="ATOM" and i[13:15]=="CA":
+    atom.append(i)
+print(atom)
+x,y,z=0,0,0
+for i in range(len(atom)):
+  x+=float(atom[i][31:38])
+  y+=float(atom[i][39:46])
+  z+=float(atom[i][47:54])
+l=len(atom)
+print(x,y,z)
+print(x/l,y/l,z/l)
