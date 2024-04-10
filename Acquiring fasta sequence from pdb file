@@ -1,0 +1,21 @@
+pdb=open('/content/1crn.pdb','r')
+import re
+aa=[]
+dic={}
+for i in pdb:
+  if re.match('ATOM',i):
+    #reno=re.findall('\d{1,}',i)
+    li=re.findall('[A-Z]{3}',i)
+    reno=i[22:27]
+    if reno not in dic:
+      dic.update({reno:li[1]})
+threetosing={'CYS': 'C', 'ASP': 'D', 'SER': 'S', 'GLN': 'Q', 'LYS': 'K',
+             'ILE': 'I', 'PRO': 'P', 'THR': 'T', 'PHE': 'F', 'ASN': 'N',
+             'GLY': 'G', 'HIS': 'H', 'LEU': 'L', 'ARG': 'R', 'TRP': 'W',
+             'ALA': 'A', 'VAL':'V', 'GLU': 'E', 'TYR': 'Y', 'MET': 'M'}
+
+for value in dic.values():
+  k=threetosing[value]
+  aa.append(k)
+for i in aa:
+  print(i,end='')
