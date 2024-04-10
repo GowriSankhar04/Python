@@ -1,0 +1,9 @@
+# Code for fibonacci
+a,b,c=0,1,0
+n=int(input("Enter a number :"))
+print(a,b,end=' ')
+for i in range(0,n):
+  c=a+b
+  print(c,end=' ',)
+  a=b
+  b=c
