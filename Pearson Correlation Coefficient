@@ -1,0 +1,15 @@
+import math
+n=int(input("enter the number of values :"))
+y2,x2,ax,sx,sy=0,0,0,0,0
+for i in range(n):
+  x=int(input("enter the x value :"))
+  y=int(input("enter the y value :"))
+  ax+=(x*y)
+  sx+=x
+  sy+=y
+  x2+=math.pow(x,2)
+  y2+=math.pow(y,2)
+z=((n*(ax))-(sx*sy))
+l=((n*x2)-((sx)**2))*((n*y2)-((sy)**2))
+r=z/math.sqrt(l)
+print("Pearson Correlation Coefficient:",r)
