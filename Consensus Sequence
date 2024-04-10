@@ -1,0 +1,27 @@
+s1='ATCGA'
+s2='AACGT'
+s3='TTGGT'
+s4='CACCA'
+l=[]
+for i in range(len(s1)):
+  a=[]
+  a.append(s1[i])
+  a.append(s2[i])
+  a.append(s3[i])
+  a.append(s4[i])
+  print(a)
+  x=len(a)//2
+  if a.count('A')>x:
+        l.append('A')
+  elif a.count('T')>x:
+        l.append('T')
+  elif a.count('G')>x:
+        l.append('G')
+  elif a.count('C')>x:
+        l.append('C')
+  else:
+        l.append('*')
+print(l)
+for i in range(len(l)):
+        if l[i]!='*':
+                print(i+1,end='  ')
