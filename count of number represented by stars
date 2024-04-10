@@ -1,0 +1,11 @@
+
+li=[1,1,2,2,3,3,4,4,4,4,4,4,7,7,7,]
+uniq=[]
+#finding the uniq elements from the list and store in "uniq"
+for i in li:
+  if(i not in uniq):
+    uniq.append(i)
+print(uniq)
+for i in uniq:
+  a=li.count(i)
+  print(i,'*'*a)
