@@ -1,0 +1,16 @@
+n=int(input("Enter a n :"))
+r=int(input("Enter a r :"))
+x=1
+y=1
+z=1
+if(n<r):
+  print("Error")
+else:
+  for i in range(1,n+1):           #range from 1 to 6 if 5!
+    x=x*i
+  for i in range(1,r+1):
+    y=y*i
+  for i in range(1,(n-r)+1):
+    z=z*i
+  print("Permutation :",x/z)
+  print("Combination :",x/(y*z))
