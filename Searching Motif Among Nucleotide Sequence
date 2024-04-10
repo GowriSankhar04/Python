@@ -1,0 +1,18 @@
+class protein:
+  def __init__(self,seq):
+    self.seq=seq
+
+  def findn(self,r,w):
+    for i in range(len(self.seq)):
+      if r==self.seq[i]:
+        print('Last :',self.seq[i-w:i])
+        print('forward :',self.seq[i+1:w+i+1])
+  def motifs(self,pat):
+    for i in range(len(self.seq)):
+      if self.seq[i:i+len(pat)]==pat:
+        print("position :",i)
+r=input('Enter the residue :')
+w=int(input('Enter window size: '))
+a1=protein("ATCGTCG")
+a1.findn(r,w)
+a1.motifs("CG")
