@@ -1,0 +1,26 @@
+#Code for Grade Calculation
+for i in range(1,6):
+  print("subject :",i)
+  for j in range(1):
+    tot=0
+    cia=int(input("Enter CIA marks"))
+    sem=int(input("Enter end sem marks"))
+    if(cia<=50 and cia>=0):
+      if(sem<=100 and sem>=0):
+        tot=cia+(sem/2)
+        if (50<=tot and tot<55):
+          print("D")
+        elif(55<=tot and tot<65):
+          print("C")
+        elif(65<=tot and tot<75):
+          print("B")
+        elif(75<=tot and tot<85):
+          print("A")
+        elif(85<=tot and tot<=100):
+          print("S")
+        else:
+          print("F")
+      else:
+        print("Invalid sem mark")
+    else:
+      print("invalid cia mark")
