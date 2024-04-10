@@ -1,0 +1,21 @@
+t=" ATGGTCGGT"
+p=" GGT"
+m=len(p)
+j=1
+for i in range(1,len(t)):
+  while j>=0:
+    if j==m:
+      j=1
+    if t[i]==p[j]:
+      print(f"{j} \t {i} \t {t[i]} \t S")
+      j+=1
+      i+=1
+      break
+    elif j>0:
+      print(f"{j} \t {i} \t {t[i]} \t F")
+      j-=1
+      break
+    elif j==0:
+      print(f"{j} \t {i} \t {t[i]} \t GNC")
+      j+=1
+      break
