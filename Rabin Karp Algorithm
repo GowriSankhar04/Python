@@ -1,0 +1,19 @@
+
+T="ATCGTTACGTT"
+P="GTT"
+d=256
+q=11
+n = len(T)
+m = len(P)
+h = pow(d, m-1, q)
+p = 0
+t0 = 0
+for i in range(m):
+  p = (d * p + ord(P[i])) % q
+  t0 = (d * t0 + ord(T[i])) % q
+for s in range(n - m + 1):
+  if p == t0:
+    if P == T[s:s+m]:
+      print(f"Pattern occurs with shift {s}")
+  if s < n - m:
+    t0 = (d * (t0 - ord(T[s]) * h) + ord(T[s + m])) % q
