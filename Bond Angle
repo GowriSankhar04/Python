@@ -1,0 +1,19 @@
+import math
+x=[1,2,3]
+y=[1,0,1]
+z=[1,3,2]
+v1=[]
+v2=[]
+x_y,x1,y1=0,0,0
+for i in range(len(x)):
+  v1.append(x[i]-y[i])             #vector defining
+  v2.append(z[i]-y[i])
+  x_y+=(v1[i]*v2[i])               #dot product--->>> a.b
+  x1+=math.pow(v1[i],2)
+  y1+=math.pow(v2[i],2)
+mod_a=math.sqrt(x1)                # -->>|a|
+mod_b=math.sqrt(y1)                # -->>|b|
+m=mod_a*mod_b                      # |a|*|b|
+theta=math.acos(x_y/m)             # finding cos^-1()
+a=math.degrees(theta)              # converting value into degree
+print(a)
