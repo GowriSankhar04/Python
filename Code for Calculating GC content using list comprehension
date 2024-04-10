@@ -1,0 +1,5 @@
+
+c=0
+dna_sequences = ["ATCGATCG", "AGCT", "ATCGATCGATCG", "AGCTAGCT"]
+gc=[(((i.count("G")+i.count("C"))*100)/len(i)) for i in dna_sequences]
+print(gc)
