@@ -1,0 +1,33 @@
+#1.
+try:
+  r=open('/content/3nir.pdb','r')
+
+except Exception as e:
+  print(e)
+  print('haaaaaai')
+
+
+#2.
+
+try:
+  r=open('/content/2ar7.pdb','r')
+  for i in r:
+    print(i)
+except Exception as e:
+  print(e)
+  print('haaaaaai')
+else:                                           #if no exception is araised, else block will run
+  print("calculation is done")
+  r.close()
+
+#3.
+
+import re
+r='ATGCTGCGCTGATATAGHC'
+try:
+  if re.findall('[^ATGC]',r):
+    raise Exception('Not a DNA Sequence')
+except Exception as e:
+  print(e)
+else:
+  print("The Sequence is DNA")
