@@ -1,0 +1,9 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import math
+ab=int(input())
+bc=int(input())
+ac=math.sqrt(ab**2+bc**2)
+t=math.acos(bc/ac)
+degree=round(math.degrees(t))
+degree_sign = u'\N{DEGREE SIGN}'
+print(str(degree)+degree_sign)
