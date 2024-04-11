@@ -1,0 +1,23 @@
+#the below program is the distance calculation between the atoms in the pdb file.
+import re
+import math
+file=open("/content/3we1.pdb","r")
+fc=file.readlines()
+li=[]
+
+for i in fc:
+  if re.search("^ATOM",i):
+    b=re.sub("\n","",i)
+    li.append(b)
+
+for i in range(len(li)):
+  for j in range(len(li)):
+    a1=re.findall("-?\d+\.\d{3}",li[i])
+    cor1=[float(x) for x in a1]
+    a2=re.findall("-?\d+\.\d{3}",li[j])
+    cor2=[float(x) for x in a2]
+    xsq=(cor1[0]-cor2[0])**2
+    ysq=(cor1[1]-cor2[1])**2
+    zsq=(cor1[2]-cor2[2])**2
+    distance=math.sqrt(xsq+ysq+zsq)
+    print(distance)
