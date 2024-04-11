@@ -1,0 +1,9 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import math
+z=complex(input())
+x,y=z.real,z.imag
+r=math.sqrt(x**2+y**2)
+
+p=math.atan2(y,x)
+print(r)
+print(p)
