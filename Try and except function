@@ -1,0 +1,28 @@
+#1.
+
+#reporting errors->default exceptional errors
+#exception: errors that raised which will stop the program when it is encountered!
+#Exception handling:
+a=int(input())
+b=int(input())
+try:
+  print(a/b)
+
+except Exception as e:
+  print(e,':pls provide non zero value')
+
+#2.
+
+import re
+o=open('/content/new  4.txt','r')
+for i in o:
+  try:
+    i=i.strip()
+    m=re.findall('^\+91\-\d{10}$',i)
+    if not m:
+      raise Exception(str(i)+ " is invalid number")
+    else:
+      print(str(i)+" is valid number")
+  except Exception as e:
+    print(e)
+
