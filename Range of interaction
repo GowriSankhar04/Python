@@ -1,28 +1,27 @@
-#gets the 1st and last values from center
-r=open('/content/3we1.pdb','r')
-c=0
+#RANGE INTERACTIONS!
+r=open('/content/3nir.pdb','r')
 l=[]
+uniq=[]
+a=[]
 for i in r:
   if i[0:4]=="ATOM":
     l.append(i[23:27])
-    c=c+1
-print(c/2)
-i,j=c//2,c//2
-n=0
-li=[]
-while n==0:
-  if l[c//2]!=l[i] and l[c//2]!=l[j]:               #here, 673 is the central residue!!
-    print(l[j],l[i])
-    li.append(l[i])
-    li.append(l[j])
-    if l[i]!=l[i-1]:
-      print('2nd next value',l[i])
-    elif l[j]!=l[j+1]:
-      print('2nd previous value',l[j])
-      break
-    i+=1
-    j-=1
-  else:
-    i+=1
-    j-=1
-print(set(li))
+for i in range(len(l)):
+  if l[i-1]!=l[i]:
+    uniq.append(int(l[i]))
+print(uniq)
+        #central residue
+#print(len(uniq))                   number of residues
+for i in range(1,3):                                      #short range interaction
+  print('Short range:',uniq[(len(uniq)//2)-i],uniq[(len(uniq)//2)+i])
+
+for i in range(3,5):                                     #medium range interaction
+  print('Medium range:',uniq[(len(uniq)//2)-i],uniq[(len(uniq)//2)+i])
+
+for i in range(len(uniq)):                                #long range interaction
+  if (len(uniq)//2-4)>i:
+    a.append(uniq[i])
+  elif (len(uniq)//2+4)<i:
+    a.append(uniq[i])
+print('Long range:',a)
+print('Central residue:',uniq[len(uniq)//2])
