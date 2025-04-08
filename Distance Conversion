@@ -1,0 +1,15 @@
+class size:
+  def __init__(self,x,c):
+    self.mm=x
+    self.unit=c
+  def show(self):
+    m=self.mm
+    dic={
+      'mm':{'mm':m,'cm':m/10,'m':m/1000,'km':m/1000000},
+      'cm':{ 'mm':m*10,'cm':m,'m':m/100,'km':m/100000},
+      'm':{'mm':m*1000,'cm':m*100,'m':m,'km':m/1000},
+      'km':{'mm':m*1000000,'cm':m*100000,'m':m*1000,'km':m}
+  }
+    return dic[self.unit]
+a1=size(8,'m')
+a1.show()
