@@ -1,0 +1,140 @@
+class A:
+  def ab(self):
+    print("A")
+class B(A):
+  def ab(self):
+    print("B")
+class C(A):
+  def ab(self):
+    print("C")
+class D(B,C):
+  def show(self):
+    pass
+c=D()
+c.ab()
+
+
+class eb:
+  def __init__(self,u):
+    self.u=u
+  def calc(self):
+    if self.u<=100 and self.u>0:
+      unit=0
+    elif self.u>=101 and self.u<=200:
+      unit=(self.u-100)*2.25
+    elif self.u>=201 and self.u<=400:
+      unit=((self.u-200)*4.5)+225
+    elif self.u>=401 and self.u<=500:
+      unit=((self.u-400)*6)+1125
+    else:
+      unit=((self.u-500)*7)+1625
+    print(unit)
+a1=eb(500)
+a1.calc()
+
+#operator overloading
+
+class point:
+  def __init__(self,x,y):
+    self.x=x
+    self.y=y                      #to add 2 objects
+  def __add__(self,other):      #magic func,other-->> refers to all other object
+    print(self.x+other.x)
+    print(self.y+other.y)
+  def __mul__(self,other):      #magic func,other-->> refers to all other object
+    print(self.x*other.x)
+    print(self.y*other.y)
+
+a1=point(1,2)
+a2=point(3,4)
+a1+a2
+print()                          #calling magic func
+a1*a2
+
+class point:
+  def __init__(self,x,y):
+    self.x=x
+    self.y=y                      #to add 2 objects
+  def __add__(self,other):      #magic func,other-->> refers to all other object
+    x=self.x+other.x
+    y=self.y+other.y
+    print(str(x)+'+'+str(y)+'i')
+  def __sub__(self,other):      #magic func,other-->> refers to all other object
+    x=self.x-other.x
+    y=self.y-other.y
+    print(str(x)+'+'+str(y)+'i')
+  def __mul__(self,other):      #magic func,other-->> refers to all other object
+    x=self.x*other.x
+    y=self.y*other.y
+    print(str(x)+'+'+str(y)+'i')
+  def __truediv__(self,other):      #magic func,other-->> refers to all other object
+    x=self.x//other.x
+    y=self.y//other.y
+    print(str(x)+'+'+str(y)+'i')
+x1=int(input("a :"))
+y1=int(input("ib :"))
+x2=int(input("a :"))
+y2=int(input("ib :"))
+a1=point(x1,y1)
+a2=point(x2,y2)
+a1+a2
+a1-a2
+a1*a2
+a1/a2
+
+class stack:
+  def __init__(self):
+    self.tos=-1             #top of stack
+    self.ele=[]
+    self.size=4
+  def push(self,element):
+    if self.tos+1==self.size:
+      print("stack is full")
+    else:
+      self.ele.append(element)
+      self.tos+=1
+      print(self.ele)
+  def pop(self,i):
+    if self.tos<1:
+      print("stack is empty")
+    else:
+      self.ele.remove(i)
+      self.tos-=1
+      print(self.ele)
+a1=stack()
+
+for i in range(10):
+  a1.push(i)
+for j in range(10):
+  a1.pop(j)
+
+class point:
+  def __init__(self,x,y):
+    self.x=x
+    self.y=y                      #to add 2 objects
+  def __add__(self,other):      #magic func,other-->> refers to all other object
+    x=self.x+other.x
+    y=self.y+other.y
+    print(str(x)+'+'+str(y))
+  def __sub__(self,other):      #magic func,other-->> refers to all other object
+    x=self.x-other.x
+    y=self.y-other.y
+    print(str(x)+'+'+str(y))
+  def __mul__(self,other):      #magic func,other-->> refers to all other object
+    x=self.x*other.x
+    y=self.y*other.y
+    print(x,y)
+  def __truediv__(self,other):      #magic func,other-->> refers to all other object
+    x=self.x//other.x
+    y=self.y//other.y
+    print(str(x)+'+'+str(y))
+x1=int(input("a :"))
+y1=complex(input("ib :"))
+x2=int(input("a :"))
+y2=complex(input("ib :"))
+a1=point(x1,y1)
+a2=point(x2,y2)
+a1+a2
+a1-a2
+a1*a2
+#a1/a2
