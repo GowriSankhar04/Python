@@ -1,0 +1,46 @@
+class emp:
+  def __init__(self,a,b,c,d,e):
+    self.name=a
+    self.id=b
+    self.sal=c
+    self.dept=d
+    self.desg=e
+    if self.desg=="manager":
+      salary=self.sal*0.25
+    elif self.desg=="JWM":
+      salary=self.sal*0.15
+    else:
+      salary=self.sal*0.07
+    self.sal=salary+self.sal
+  def disp(self):
+    print("NAME:",self.name)
+    print("ID:",self.id)
+    print("SAL:",self.sal)
+    print("DEPT:",self.dept)
+    print("DESIGNATION:",self.desg)
+    print()
+a1=emp("nikki",34,10000,"BIN","manager")
+a1.disp()
+a2=emp("gowri",16,10000,"BIN","JWM")
+a2.disp()
+
+for i in range(4):
+  c=input("Enter the course code:")
+  s=int(input("Enter the score:"))
+  if s<=0 and s>=100:
+    if 50<s and s<=55:
+      print("D")
+    elif 55<s and s<=65:
+      print("C")
+    elif 65<s and s<=75:
+      print("B")
+    elif 75<s and s<=85:
+      print("A")
+    elif 85<s and s<=90:
+      print("A+")
+    elif 90<s and s<=100:
+      print("S")
+    else:
+      print("F")
+  else:
+    print("Input error")
