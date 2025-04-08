@@ -1,0 +1,16 @@
+class TimeConversion:
+  def __init__(self,h,m,s):
+    self.hr=h
+    self.min=m
+    self.sec=s
+  def gethour(self):
+    return self.hr
+  def sethour(self,new_hr):
+    self.hr=self.hr+new_hr
+    return self.hr
+
+a1=TimeConversion(10,25,5)
+h=a1.gethour()
+print(h)
+h=a1.sethour(5)
+print(h)
